@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from '../products';
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app2',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
 
-  products: Products = {
+  products: {
     id: 1,
     name: 'Windstorm'
   };

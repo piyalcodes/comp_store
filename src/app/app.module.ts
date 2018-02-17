@@ -1,37 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Routing } from "./routes";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
-
-
-const appRoutes: Routes = [
-  /* { path: 'crisis-center', component: CrisisListComponent },
-  { path: 'hero/:id',      component: HeroDetailComponent },*/
-  {
-    path: 'products',
-    component: ProductsComponent,
-    data: { title: 'products List' }
-  },
-  { path: '',
-    redirectTo: '/products',
-    pathMatch: 'full'
-  }
-];
+import { CartComponent } from './cart/cart.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+	CartComponent,
+	HomeComponent
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
-    ),
-    BrowserModule, NgbModule
+	Routing,
+    BrowserModule, 
+    NgbModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

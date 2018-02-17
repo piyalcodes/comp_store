@@ -1,24 +1,19 @@
 
-
-{{products}}
-
-<h2>{{ products.name }} Details</h2>
-<div><span>id: </span>{{products.id}}</div>
-<div><span>name: </span>{{products.name}}</div>
-
-  
     <div class="row">
-     
-         <div class="col-sm">
-             <div class="card">
-                 <img src="assets\images\1.jpg" width="100px">
-                 <div class="card-body">
-                   <h5 class="card-title">Card title</h5>
-                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   <a href="#" class="btn btn-primary">Go somewhere</a>
-                 </div>
-               </div>
-         </div>
-     
+        <div class="col-sm-4" *ngFor="let product of productList">
+                <div class="card" >
+                    <img src="{{product.img}}" width="300px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.title}}</h5>
+                        <p class="card-text">{{product.description}}</p>
+                        <a href="javascript:void(0)" class="btn btn-primary" 
+                        (click)="addToCart($event, product.id)"
+                        *ngIf="product.incart == 'false'">Add to Cart</a>
+                        <a href="javascript:void(0)" class="btn btn-primary" 
+                        (click)="addToCart($event, product.id)"
+                        *ngIf="product.incart == 'true'">Remove from cart</a>
+                        {{product.incart}}
+                    </div>
+                </div>
+        </div>
     </div>
-      

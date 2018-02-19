@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/Rx';
 import { forEach } from '@angular/router/src/utils/collection';
+import * as _ from 'lodash'; 
 
 @Component({
   selector: 'app-root',
@@ -54,17 +55,18 @@ export class ProductsComponent implements OnInit {
         }
 
         $this.productList =  result;
+
         for (var i = 0; i <= $this.productList.length; i++) {
           $this.productList[i].incart = 'false';
-         
+
           for (var y = 0; y <= products.length; y++) {  
             if(products[y]) {
               if($this.productList[i].id == products[y].id) {
                 $this.productList[i].incart = 'true';
               }
             }  
-          } 
-        }
+          }              
+        }      
        
 
     }).catch(result => {

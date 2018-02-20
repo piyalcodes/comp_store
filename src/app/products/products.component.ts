@@ -66,16 +66,12 @@ export class ProductsComponent implements OnInit {
               }
             }  
           }              
-        }      
-       
-
+        }
     }).catch(result => {
           // call error popup
     }); 
   }
 
-
-  
   /**
    *  Add to cart click method
    * 
@@ -112,5 +108,4 @@ export class ProductsComponent implements OnInit {
       }
     } 
   }
-
 }

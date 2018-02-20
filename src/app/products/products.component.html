@@ -1,15 +1,19 @@
 
     <div class="row">
-        <div class="col-sm-4" *ngFor="let product of productList">
+        <div class="col-sm-4 productList" *ngFor="let product of productList">
                 <div class="card" >
                     <img src="{{product.img}}" width="300px">
                     <div class="card-body">
                         <h5 class="card-title">{{product.title}}</h5>
                         <p class="card-text">{{product.description}}</p>
-                        <a href="javascript:void(0)" class="btn btn-primary" 
+
+                        <input type="text" class="form-control" width="50px" id="exampleInputEmail1" aria-describedby="Quantity" 
+                        placeholder="Quantity" >
+
+                        <a href="javascript:void(0)" class="btn btn-success" 
                         (click)="addToCart($event, product.id)"
                         *ngIf="product.incart == 'false'">Add to Cart</a>
-                        <a href="javascript:void(0)" class="btn btn-primary" 
+                        <a href="javascript:void(0)" class="btn btn-warning " 
                         (click)="addToCart($event, product.id)"
                         *ngIf="product.incart == 'true'">Remove from cart</a>
                     </div>

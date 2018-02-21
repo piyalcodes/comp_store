@@ -1,4 +1,10 @@
-
+<div class="productCart" *ngIf="productCart">
+        <span class="badge badge-pill badge-success">You have {{productCart}}        </span>
+        <br />In your cart
+        <br />
+        <a href="javascript:void(0)" class="btn btn-link" 
+         >Order Now</a>
+</div>
     <div class="row">
         <div class="col-sm-4 productList" *ngFor="let product of productList">
                 <div class="card" >
@@ -8,13 +14,13 @@
                         <p class="card-text">{{product.description}}</p>
 
                         <input type="text" class="form-control" width="50px" id="exampleInputEmail1" aria-describedby="Quantity" 
-                        placeholder="Quantity" >
+                        placeholder="Quantity" (ngModel)="qtyValue"><span class="kg"> {{product.qty}}</span>
 
                         <a href="javascript:void(0)" class="btn btn-success" 
-                        (click)="addToCart($event, product.id)"
+                        (click)="addToCart($event, product.id, qtyValue)"
                         *ngIf="product.incart == 'false'">Add to Cart</a>
                         <a href="javascript:void(0)" class="btn btn-warning " 
-                        (click)="addToCart($event, product.id)"
+                        (click)="removeCart($event, product.id)"
                         *ngIf="product.incart == 'true'">Remove from cart</a>
                     </div>
                 </div>

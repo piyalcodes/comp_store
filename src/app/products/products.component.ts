@@ -54,6 +54,8 @@ export class ProductsComponent implements OnInit {
           products = localStorage.products ? JSON.parse(localStorage.products) : '' ;          
         }
 
+        this.productCart = products.length;
+        
         $this.productList =  result;
 
         for (var i = 0; i <= $this.productList.length; i++) {
@@ -78,7 +80,63 @@ export class ProductsComponent implements OnInit {
    * @param {object} e event paramenter
    * @param {number} id id of the current product 
    */
-  addToCart(e, id) {    
+  removeCart(e, id) {  
+    
+    
+    e.preventDefault();
+    if (typeof(Storage) !== "undefined") {
+      
+      if(!localStorage.products) {
+          
+        localStorage.setItem("products", '[]');
+        this.productCart = 0;
+      }
+
+      let productsCart = JSON.parse(localStorage.products);
+
+       
+      localStorage.removeItem("products");
+
+      let products = [];
+      for (var i = 0; i <= productsCart.length; i++) {
+        if(productsCart[i]) {
+          if(productsCart[i].id != id) {
+            let productData = {
+              'id' : productsCart[i].id,
+              'qnt' : productsCart[i].kg
+            }
+            products.push(productData);
+          }   
+        }             
+      }
+
+      localStorage.setItem("products", JSON.stringify(products));
+      this.productCart = products.length;
+
+      products = JSON.parse(localStorage.products);
+       
+      for (var i = 0; i <= this.productList.length; i++) {
+        if(this.productList[i]) {
+          if(this.productList[i].id == id) {
+             this.productList[i].incart = 'false';
+          }  
+        }        
+      }
+    } 
+  }
+
+
+    /**
+   *  Remove cart click method
+   * 
+   * @param {object} e event paramenter
+   * @param {number} id id of the current product 
+   */
+  addToCart(e, id, qty) { 
+    if(qty == '') {
+      console.log("empty")
+      return true;
+    }
     e.preventDefault();
     if (typeof(Storage) !== "undefined") {
       
@@ -91,11 +149,12 @@ export class ProductsComponent implements OnInit {
 
       let productData = {
         'id' : id,
-        'qnt' : '1kg'
+        'qnt' : qty
       }
       productsCart.push(productData);
       localStorage.removeItem("products");
       localStorage.setItem("products", JSON.stringify(productsCart));
+      this.productCart = productsCart.length;
 
       let products = JSON.parse(localStorage.products);
        
@@ -109,3 +168,4 @@ export class ProductsComponent implements OnInit {
     } 
   }
 }
+

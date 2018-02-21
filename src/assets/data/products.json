@@ -3,30 +3,35 @@
         "id": 1,
         "title": "කෝලිකුට්ටු කෙසෙල් (Kolikuttu)",
         "img": "assets/images/kolikuttu.jpg",
-        "description": "Test product"
+        "description": "Test product",
+        "qty" : "kg"
     },
     {    
         "id": 2,
         "title": "සීනි කෙසෙල් (Seeni Kesel)",
         "img": "assets/images/seeni-kesel.png",
-        "description": "Test product"
+        "description": "Test product",
+        "qty" : "kg"
     },
     {    
         "id": 3,
         "title": "ආනමාලු කෙසෙල් (Anamalu Kesel)",
         "img": "assets/images/ambun.jpg",
-        "description": "Test product"
+        "description": "Test product",
+        "qty" : "kg"
     },
     {    
         "id": 4,
         "title": "ඇඹුල් කෙසෙල් (Ambul Kesel)",
         "img": "assets/images/ambul.png",
-        "description": "Test product"
+        "description": "Test product",
+        "qty" : "kg"
     },
     {    
         "id": 5,
         "title": "රත් කෙසෙල් (Rath Kesel)",
         "img": "assets/images/rath-kesel.png",
-        "description": "Test product"
+        "description": "Test product",
+        "qty" : "kg"
     }
 ]

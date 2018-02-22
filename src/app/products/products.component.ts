@@ -11,12 +11,14 @@ import * as _ from 'lodash';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
+
 export class ProductsComponent implements OnInit {
 
+  model = new qty('');
   productList: any = null;  
   productCart: any = null;  
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient ) { }
 
   ngOnInit() { 
 
@@ -169,3 +171,8 @@ export class ProductsComponent implements OnInit {
   }
 }
 
+export class qty {  
+    constructor(
+      public qtyValue: any
+    ) { }  
+}

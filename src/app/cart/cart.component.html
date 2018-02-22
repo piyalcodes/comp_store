@@ -1,3 +1,124 @@
+<div class="col-sm-4 productList" *ngFor="let product of productCartList">
+    {{product.img}} |
+</div>
 
-Cart componenet loaded
+
+<div [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="name">Name</label>        
+        
+        <input type="text" class="form-control" id="name"
+        required
+        [(ngModel)]="model.name" name="name"
+        #name="ngModel" placeholder="Your name">
+        <div [hidden]="name.valid || name.pristine"
+              class="alert alert-danger">
+          Name is required
+        </div>
  
+             
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">E-mail address</label>
+        <input type="text" class="form-control" id="email"
+        required
+        [(ngModel)]="model.email" name="email"
+        #email="ngModel" placeholder="Your email">
+        <div [hidden]="email.valid || email.pristine"
+              class="alert alert-danger">
+          E-mail is required
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="mobile">Mobile number</label>
+               
+              <input type="text" class="form-control" id="mobile"
+              required
+              [(ngModel)]="model.mobile" name="mobile"
+              #mobile="ngModel" placeholder="Mobile number">
+              <div [hidden]="mobile.valid || mobile.pristine"
+                    class="alert alert-danger">
+                    Mobile number is required
+              </div>
+
+
+            </div>
+            <div class="form-group col-md-6">
+              <label for="time">Time to contact (Day / Time)</label>
+              <input type="text" class="form-control" id="time" name="time"  [(ngModel)]="model.time" #time="ngModel" 
+               placeholder="What is the best time to call you">
+            </div>
+          </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      
+      <input type="text" class="form-control" id="address"
+      required
+      [(ngModel)]="model.address" #address="ngModel" name="address"
+       placeholder="Your address">
+      <div [hidden]="address.valid || address.pristine"
+            class="alert alert-danger">
+            Address number is required
+      </div>
+
+
+    </div>
+
+    <div class="form-group">
+            <label for="map">Google Map Address (Optional)</label>
+            <input type="text" class="form-control" id="map" name="map" placeholder="Google map location"
+            [(ngModel)]="model.map" #map="ngModel" >
+    </div>
+
+    <div class="form-group">
+            <label for="km">Distance from Rajagiriya to your Address (Optional) <br>
+            </label>
+            <input type="text" class="form-control" id="km" name="km" placeholder="KM "
+            [(ngModel)]="model.km" #km="ngModel">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Order</button>
+
+    <br />
+    <br />    <br /> 
+  </form>
+
+</div>
+
+
+<div [hidden]="!submitted">
+  
+  <div class="row">
+    <div class="col-xs-3">Name</div>
+    <div class="col-xs-9  pull-left">
+      {{ model.name }} |
+      {{ model.email }} |
+      {{ model.mobile }} |
+      {{ model.time }} |
+      {{ model.address }} |
+      {{ model.map }} |
+      {{ model.km }} | 
+    </div>
+  </div>
+  
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+
+<style>
+  .no-style .ng-valid {
+  border-left: 1px  solid #CCC
+}
+
+  .no-style .ng-invalid {
+  border-left: 1px  solid #CCC
+}
+</style>

@@ -4,26 +4,32 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routing } from "./routes";
 import { HttpClientModule } from '@angular/common/http';
 
+
+
+import { FormsModule }   from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 
-
-
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
 	CartComponent,
-	HomeComponent
+	HomeComponent,
+	ContactComponent
   ],
   imports: [
 	Routing,
     BrowserModule, 
     NgbModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

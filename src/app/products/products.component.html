@@ -13,11 +13,13 @@
                         <h5 class="card-title">{{product.title}}</h5>
                         <p class="card-text">{{product.description}}</p>
 
-                        <input type="text" class="form-control" width="50px" id="exampleInputEmail1" aria-describedby="Quantity" 
-                        placeholder="Quantity" (ngModel)="qtyValue"><span class="kg"> {{product.qty}}</span>
-
+                        <input type="text" class="form-control" width="50px" id="qtyValue{{product.rand}}"
+                         aria-describedby="Quantity" name="qtyValue{{product.rand}}"
+                        placeholder="Quantity" [(ngModel)]="model.qtyValue+product.rand"  
+                        ><span class="kg"> {{product.qty}}</span>
+                   
                         <a href="javascript:void(0)" class="btn btn-success" 
-                        (click)="addToCart($event, product.id, qtyValue)"
+                        (click)="addToCart($event, product.id, model.qtyValue+product.rand)"
                         *ngIf="product.incart == 'false'">Add to Cart</a>
                         <a href="javascript:void(0)" class="btn btn-warning " 
                         (click)="removeCart($event, product.id)"

@@ -67,9 +67,10 @@ export class CartComponent implements OnInit {
           if(products[y]) {
             
             if($this.productList[i].id == products[y].id) {
-             
+              $this.productList[i].num = products[y].qnt;
               $this.productCartList.push($this.productList[i]);
-              
+
+              console.log($this.productCartList);
             }
           }  
         }              
@@ -82,11 +83,23 @@ export class CartComponent implements OnInit {
 	  } 
      
     submitted = false;
-    onSubmit() { this.submitted = true; }
+    onSubmit() { 
+      this.submitted = true;
+      
+      let name = this.model.name
+      let email = this.model.email
+      let mobile = this.model.mobile
+      let time = this.model.time
+      let address = this.model.address
+      let map = this.model.map
+      let km = this.model.km
+
+    }
      
     showFormControls(form: any) {
+      console.log(form.controls['name']);
       return form && form.controls['name'] &&
-      form.controls['name'].value; 
+      form.controls['name'].value;
     }
 
 }

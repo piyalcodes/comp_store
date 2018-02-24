@@ -69,7 +69,8 @@ export class ProductsComponent implements OnInit {
                 $this.productList[i].incart = 'true';
               }
             }  
-          }              
+          } 
+           
         }
     }).catch(result => {
           // call error popup
@@ -134,7 +135,7 @@ export class ProductsComponent implements OnInit {
    * @param {object} e event paramenter
    * @param {number} id id of the current product 
    */
-  addToCart(e, id, qty) { 
+  addToCart(e, id, qty) {  
     if(qty == '') {
       console.log("empty")
       return true;

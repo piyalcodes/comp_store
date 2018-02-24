@@ -1,4 +1,4 @@
-<div id="accordion">
+<div id="accordion" [hidden]="submitted">
     <div class="card">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
@@ -28,6 +28,8 @@
         <div class="card-body">
          
 <div [hidden]="submitted" style="clear: both">
+
+
     <form (ngSubmit)="onSubmit()" #cartForm="ngForm">
       
       <div class="form-row">
@@ -110,7 +112,7 @@
               [(ngModel)]="model.km" #km="ngModel">
       </div>
       <br>  
-      <button type="submit" class="btn btn-success" [disabled]="!cartForm.form.valid">Send my order now</button>
+      <button type="submit" class="btn btn-success" [disabled]="!cartForm.form.valid">Send the order now</button>
   
       <br />
        
@@ -119,24 +121,7 @@
   </div>
   
   
-  <div [hidden]="!submitted">
-    
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9  pull-left">
-        {{ model.name }} |
-        {{ model.email }} |
-        {{ model.mobile }} |
-        {{ model.time }} |
-        {{ model.address }} |
-        {{ model.map }} |
-        {{ model.km }} | 
-      </div>
-    </div>
-    
-    
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-  </div>
+  
   
   <style>
     .no-style .ng-valid {
@@ -154,3 +139,9 @@
   </div> 
 
   <br><br><br><br>
+
+  <div [hidden]="!submitted">
+      
+      Thank you. We will call you for within two business days. 
+  
+    </div>

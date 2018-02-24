@@ -12,11 +12,17 @@
                     <div class="card-body">
                         <h5 class="card-title">{{product.title}}</h5>
                         <p class="card-text">{{product.description}}</p>
-
-                        <input type="text" class="form-control" width="50px" id="qtyValue{{product.rand}}"
-                         aria-describedby="Quantity" name="qtyValue{{product.rand}}"
-                        placeholder="Quantity" [(ngModel)]="model.qtyValue+product.rand"  
-                        ><span class="kg"> {{product.qty}}</span>
+ 
+                        <select id="qtyValue{{product.rand}}"
+                        aria-describedby="Quantity" name="qtyValue{{product.rand}}"
+                       placeholder="Quantity" [(ngModel)]="model.qtyValue+product.rand">
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>5</option>
+                            <option>10</option>
+                        </select>
+                        <span class="kg">{{product.qty}}</span>
                    
                         <a href="javascript:void(0)" class="btn btn-success" 
                         (click)="addToCart($event, product.id, model.qtyValue+product.rand)"

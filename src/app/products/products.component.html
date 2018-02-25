@@ -11,6 +11,7 @@
                     <img src="{{product.img}}" width="300px">
                     <div class="card-body">
                         <h5 class="card-title">{{product.title}}</h5>
+                        <div class="badge badge-danger price">{{product.price}}</div>
                         <p class="card-text">{{product.description}}</p>
  
                         <select id="qtyValue{{product.rand}}"
@@ -21,8 +22,7 @@
                             <option>3</option>
                             <option>5</option>
                             <option>10</option>
-                        </select>
-                        <span class="kg">{{product.qty}}</span>
+                        </select><span class="kg">{{product.qty}}</span>
                    
                         <a href="javascript:void(0)" class="btn btn-success" 
                         (click)="addToCart($event, product.id, model.qtyValue+product.rand)"

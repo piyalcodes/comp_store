@@ -9,8 +9,20 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./cart.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class CartComponent implements OnInit {
- 
+export class CartComponent implements OnInit { 
+
+  title: string = 'My first AGM project';
+  lat: number = 6.909750;
+  lng: number = 79.895574;
+
+  getMapClick(e) {
+
+    this.lat = e.coords.lat;
+    this.lng = e.coords.lng;    
+    this.model.map = "https://www.google.lk/maps/place/7%C2%B002'35.8%22N+80%C2%B008'06.7%22E/@"+e.coords.lat+","+e.coords.lng;
+    
+  }
+  
   //cartForm: FormGroup;
    
   productList: any = null;  

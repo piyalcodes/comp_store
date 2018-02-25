@@ -6,10 +6,16 @@ import { ContactComponent } from "./contact/contact.component";
 
 const routes: Routes = [
 	{
-		path: "home",
-		component: HomeComponent,
+		path: "",
+		component: ProductsComponent,
 		pathMatch: "full",
-	}, {
+	},
+	{
+		path: "home",
+		component: ProductsComponent,
+		pathMatch: "full",
+	}, 
+	{
 
 		path: "products",
 		component: ProductsComponent,

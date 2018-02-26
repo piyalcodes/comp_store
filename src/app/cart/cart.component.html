@@ -10,6 +10,7 @@
   
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
+          <div *ngIf="productCartList.length <= 1">Your cart is empty. Please add items from products page</div>
             <ul class="cartList" *ngFor="let product of productCartList">
                 <li><img src="{{product.img}}" width="50px"></li> 
                 <li>{{product.title}}</li> 
@@ -19,7 +20,7 @@
       </div>
       <br />
     </div>
-    <div class="card">
+    <div class="card" *ngIf="productCartList.length >= 1">
       <div class="card-header" id="headingTwo">
         <h5 class="mb-0">
           <button class="btn btn-link CartTitle" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">

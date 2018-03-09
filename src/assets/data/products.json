@@ -4,7 +4,8 @@
         "rand": 1,
         "title": "කෝලිකුට්ටු කෙසෙල් (Kolikuttu)",
         "img": "assets/images/kolikuttu.jpg",
-        "description": "Test product",
+        "description": "These products are not planted in banana plant, they are collected from villages around Sinharaja forest",
+        "price" : "700RS - 750RS",
         "qty" : "kg"
     },
     {    
@@ -12,7 +13,8 @@
         "rand": 2,
         "title": "සීනි කෙසෙල් (Seeni Kesel)",
         "img": "assets/images/seeni-kesel.png",
-        "description": "Test product",
+        "description": "These products are not planted in banana plant, they are collected from villages around Sinharaja forest",
+        "price" : "550Rs- 600RS",
         "qty" : "kg"
     },
     {    
@@ -20,7 +22,8 @@
         "rand": 3,
         "title": "ආනමාලු කෙසෙල් (Anamalu Kesel)",
         "img": "assets/images/ambun.jpg",
-        "description": "Test product",
+        "description": "These products are not planted in banana plant, they are collected from villages around Sinharaja forest",
+        "price" : "600RS - 650RS",
         "qty" : "kg"
     },
     {    
@@ -28,7 +31,8 @@
         "rand": 4,
         "title": "ඇඹුල් කෙසෙල් (Ambul Kesel)",
         "img": "assets/images/ambul.png",
-        "description": "Test product",
+        "description": "These products are not planted in banana plant, they are collected from villages around Sinharaja forest",
+        "price" : "500Rs- 550RS",
         "qty" : "kg"
     },
     {    
@@ -36,7 +40,8 @@
         "rand": 5,
         "title": "රත් කෙසෙල් (Rath Kesel)",
         "img": "assets/images/rath-kesel.png",
-        "description": "Test product",
+        "description": "These products are not planted in banana plant, they are collected from villages around Sinharaja forest",
+        "price" : "700RS - 750RS",
         "qty" : "kg"
     }
 ]
